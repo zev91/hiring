@@ -29,8 +29,9 @@ ul {
   background-size: cover;
 }
 .item1 .qt_logo {
-  align-self: flex-start;
-  margin-left: 5.6vw;
+  position: absolute;
+  top: 5.6vw;
+  left: 5.6vw;
 }
 .item1 .qt_logo img {
   width: 32.8vw;
@@ -89,7 +90,7 @@ ul {
 .about .header_logo, .jobs .header_logo {
   width: 8vw;
   height: 6.6666666667vw;
-  margin-top: 6.6666666667vw;
+  margin-top: 4vw;
 }
 .about .header_logo img, .jobs .header_logo img {
   width: 100%;
@@ -154,6 +155,40 @@ ul {
 }
 .jobs .jobs_btn .btn.flex_end {
   float: right;
+}
+.jobs .eveirment_ct {
+  width: 80vw;
+  height: 110.9333333333vw;
+  padding-top: 5.3333333333vw;
+  text-align: left;
+  overflow: hidden;
+}
+.jobs .eveirment_ct .imagec_ct {
+  width: 480vw;
+  transition: all .4s ease-in;
+}
+.jobs .eveirment_ct .imagec_ct li {
+  display: inline-block;
+  width: 80vw;
+}
+.jobs .eveirment_ct .imagec_ct li img {
+  width: 100%;
+}
+.jobs .bubble_ct {
+  position: absolute;
+  top: 37.8666666667vw;
+}
+.jobs .bubble_ct .bubble {
+  width: 1.6vw;
+  height: 1.6vw;
+  margin: 0 0.2666666667vw;
+  border: 1px solid #009196;
+  border-radius: 50%;
+  float: left;
+  transition: all .3s ease-in;
+}
+.jobs .bubble_ct .bubble.active {
+  background: #009196;
 }
 .jobs .job_info {
   padding: 1.8666666667vw 4vw;

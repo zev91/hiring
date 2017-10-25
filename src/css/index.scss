@@ -2,6 +2,7 @@
         @return $px / 750px * 100vw;
     
   }
+ 
 
   html, body {
     margin: 0;
@@ -25,6 +26,7 @@ ul {
         }
     }
   }
+
 .item1{
     display: flex;
     flex-direction: column;
@@ -34,9 +36,9 @@ ul {
     background: url(../images/img_bg.png) top center;
     background-size: cover;
     .qt_logo{
-        align-self: flex-start;
-        // margin-top: pxToVw(54px);
-        margin-left: pxToVw(42px);
+        position: absolute;
+        top: pxToVw(42px);
+        left: pxToVw(42px);
         img{
             width: pxToVw(246px);
         }
@@ -95,7 +97,7 @@ ul {
     .header_logo{
         width: pxToVw(60px);
         height: pxToVw(50px);
-        margin-top: pxToVw(50px);
+        margin-top: pxToVw(30px);
         img{
             width: 100%;
         }
@@ -105,7 +107,7 @@ ul {
          > p.align_left{ 
              text-align: left;  
              margin: pxToVw(36px) 0;
-             text-indent:2em ;
+             text-indent:2em;
              font-size: pxToVw(24px);
              font-weight: 300;
              color: #313131;
@@ -164,6 +166,43 @@ ul {
          }
         
 
+    }
+    .eveirment_ct{
+        width: pxToVw(600px);
+        height: pxToVw(832px);
+        padding-top: pxToVw(40px);
+        text-align: left;
+        overflow: hidden;
+        
+       .imagec_ct{
+            width: pxToVw(3600px);
+            transition: all .4s ease-in;
+            // height: pxToVw(832px);
+            li{
+                display: inline-block;
+                width: pxToVw(600px);
+                img{
+                    width: 100%;
+                }
+            }
+       }
+        
+    }
+    .bubble_ct{
+        position: absolute;
+        top: pxToVw(284px);
+        .bubble{
+            width: pxToVw(12px);
+            height: pxToVw(12px);
+            margin: 0 pxToVw(2px);
+            border: 1px solid #009196;
+            border-radius: 50%;
+            float: left;
+            transition: all .3s ease-in;
+        }
+        .bubble.active{
+            background: #009196;
+        }
     }
     .job_info{
         padding: pxToVw(14px) pxToVw(30px);

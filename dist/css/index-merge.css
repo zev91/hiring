@@ -767,7 +767,7 @@ ul {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 .jobs .eveirment_ct .arrow_right {
-  left: 96%;
+  left: 94%;
   margin-left: -10px;
   border-color: transparent #fff #fff transparent;
   animation: toright 1.5s .2s ease 3;
@@ -775,7 +775,7 @@ ul {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 .jobs .eveirment_ct .arrow_left {
-  left: 4%;
+  right: 94%;
   margin-left: 10px;
   border-color: transparent transparent #fff #fff;
   animation: toleft 1.5s .2s ease 3;

@@ -168,21 +168,53 @@ ul {
 
     }
     .eveirment_ct{
+        position: relative;
         width: pxToVw(600px);
-        height: pxToVw(832px);
+        // height: pxToVw(800px);
         padding-top: pxToVw(40px);
         text-align: left;
         overflow: hidden;
-        
+       .arrow_width {
+            // display: block;
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 50%;
+            z-index: 9999;
+            border: 1px solid;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+        }
+        .arrow_right {
+            left: 96%;
+            margin-left: -10px;
+            border-color: transparent #fff #fff transparent; 
+            animation: toright 1.5s .2s ease 3;
+            -webkit-animation: toright 1.5s .2s 3;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+        }
+        .arrow_left {
+            left: 4%;
+            margin-left: 10px;
+            border-color: transparent transparent #fff #fff ; 
+            animation: toleft 1.5s .2s ease 3;
+            -webkit-animation: toleft 1.5s .2s 3;
+            box-shadow: -2px 2px 2px rgba(0,0,0,0.2);
+        }
        .imagec_ct{
             width: pxToVw(3600px);
             transition: all .4s ease-in;
             // height: pxToVw(832px);
             li{
-                display: inline-block;
+                display: block;
+                float: left;
                 width: pxToVw(600px);
                 img{
                     width: 100%;
+                    display: block;
+                    
+                    &:first-child{
+                        margin-bottom: pxToVw(8px);
+                    }
                 }
             }
        }
@@ -191,10 +223,17 @@ ul {
     .bubble_ct{
         position: absolute;
         top: pxToVw(284px);
+        left: 50%;
+        padding: pxToVw(4px) pxToVw(20px);
+        border-radius: pxToVw(20px);
+        background: rgba(255, 255, 255, 0.4);
+        // border: 1px solid #009196;
+        margin-left: - pxToVw(50px);
+        // box-shadow: 0px 0px 2px rgba(0, 145, 150, 0.3);
         .bubble{
             width: pxToVw(12px);
             height: pxToVw(12px);
-            margin: 0 pxToVw(2px);
+            margin: 0 pxToVw(4px);
             border: 1px solid #009196;
             border-radius: 50%;
             float: left;

@@ -7,7 +7,7 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>青桐招聘</title>
-    <link rel="stylesheet" href="css/index-merge-2b1d817487.css">
+    <link rel="stylesheet" href="css/index-merge-21e39e3514.css">
 
 </head>
 
@@ -41,7 +41,7 @@
                 <p class="align_left">
                     <span>青桐资本</span>成立于2014年3月，是一家新兴的互联网投行公司，专注于互联网、消费服务、 能源环保等领域中早期创业公司的投行业务，累计完成的交易额超过十亿美元，涉及互联网、汽车后服务、物流、金融服务、教育等多个行业。
                 </p>
-                <p class="align_left">青桐资本由业内资深的投行人士和成功的创业家共同发起组建。创始人参与过累计数十亿美元的资本运作，创立过市值近百亿的公司。 财务顾问业务核心团队成员均来自国内一线投资银行机构。产品技术团队主要成员来自携程、腾讯、360、58、游族。
+                <p class="align_left"><span>青桐资本</span>由业内资深的投行人士和成功的创业家共同发起组建。创始人参与过累计数十亿美元的资本运作，创立过市值近百亿的公司。 财务顾问业务核心团队成员均来自国内一线投资银行机构。产品技术团队主要成员来自携程、腾讯、360、58、游族。
                 </p>
                 <p class="align_left">成长至今，青桐凭借年轻的团队、快速高效的工作风格，不断进取的野心，正在成为国内早期投资界一股崛起的新兴力量。</p>
                 <h5>公司网址</h5>
@@ -61,7 +61,10 @@
                 <div class="header_bg">
                     <h4 class="cssdf17c4e8316c69 fadeIn part">公司环境</h4>
                 </div>
+                
                 <div class="eveirment_ct">
+                        <span class="arrow_width arrow_right part" data-delay="300"></span>
+                        <span class="arrow_width arrow_left part"></span>
                     <ul class="imagec_ct">
                         <li><img src="images/01.png" alt=""><img src="images/02.png" alt=""></li><li><img src="images/03.png" alt=""><img src="images/04.png" alt=""></li><li><img src="images/05.png" alt=""><img src="images/06.png" alt=""></li>
                     </ul>
@@ -295,7 +298,22 @@
     <script src="js/zepto.js"></script>
     <script type="text/javascript" src="js/H5FullscreenPage.js"></script>
     <script src="js/app/index-2794f44ffc.js"></script>
-
+<script>
+    // $('.arrow_width').each(function(){
+    //     $(this)[0].addEventListener("webkitAnimationEnd", function() {
+    //         $(this).css('display','none')
+    //         console.log('ok')
+    //   })
+    // })
+    $('.arrow_width')[0].addEventListener("webkitAnimationEnd", function(){
+        // $('.arrow_width').addClass('hide')
+        $('.arrow_width').css('display','none')
+        console.log($('.arrow_width'))
+       
+        // $('.arrow_width').css('display','none')
+    })
+    
+</script>
 </body>
 
 </html>

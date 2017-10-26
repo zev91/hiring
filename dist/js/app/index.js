@@ -28,7 +28,7 @@
     };
     
     H5FullscreenPage.init({
-        'type': 2,
+        'type': 3,
         'pageShow': function (dom) {
     
         },
@@ -147,7 +147,7 @@ function setBubble(index){
             });
         }
             var $items = $('.item')
-            var $index = $(this).index() + 3
+            var $index = $(this).index() + 4
             $items.removeAttr('state')
             obj.upDrag($($items[$index]));
             obj.downDrag($($items[$index]));

@@ -1,4 +1,19 @@
 !function(){
+    $.ajax({
+        url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx28f5fd5ac0dd9c12&secret=315d528852af6e84b167fbe7da9b1947',
+        success: function(data){
+            var openid = data.openid||'';
+           $.ajax({
+               url:'https://api.weixin.qq.com/sns/userinfo?access_token='+data.access_token+'&openid='+openid+'&lang=zh_CN',
+               success:function(data){
+                   console.log(data)
+               }
+           })
+        }
+    })
+
+
+    
     $.fn.prevAll = function (selector) {
         var prevEls = [];
         var el = this[0];
@@ -76,7 +91,8 @@
     var index = 0;
     setBubble(index)
 $('.imagec_ct').swipeLeft(function(){
-    if(Math.abs(moveLength)>40){
+    $('.arrow_width').css('display','none')
+    if(Math.abs(moveLength)>20){
         if(numbLeft == -numbEve*2){
             numbLeft=0
             index = 0
@@ -91,7 +107,8 @@ $('.imagec_ct').swipeLeft(function(){
     }
 })
 $('.imagec_ct').swipeRight(function(){
-    if(Math.abs(moveLength)>40){
+$('.arrow_width').css('display','none')
+    if(Math.abs(moveLength)>20){
         if(numbLeft == 0){
             numbLeft = -numbEve*2
             index = 2
@@ -113,30 +130,11 @@ function setBubble(index){
 }
     $('body').on('tap', '.skip_to', function (e) {
         e.preventDefault;
-        
         var obj = {
-            'upDrag': function (item) {
-                item.css('-webkit-transform', 'scale(1)'); //当前item缩小
-                item.next().css('-webkit-transform', 'translate3d(0,100%,0)'); //下一个item上移动
-            },
-            'downDrag': function (item) {
-                item.css('-webkit-transform', 'translate3d(0,100%,0)'); //当前item下移动
-                item.prev().css('-webkit-transform', 'scale(1)'); //前一个item放大
-            },
-            'nextSlide': function (item) {
-                item.css('-webkit-transform', 'scale(.8)');
-                item.next().css('-webkit-transform', 'translate3d(0,0,0)');
-            },
             'prevSlide': function (item) {
-                item.prev().css('-webkit-transform', 'scale(1)');
-                item.css('-webkit-transform', 'translate3d(0,100%,0)');
-            },
-            'showSlide': function (item) {
-                item.css('-webkit-transform', 'scale(1)');
-                item.next().css('-webkit-transform', 'translate3d(0,100%,0)');
+                item.css('-webkit-transform', 'translate3d(0,0,0)');
             }
         }
-       
         function orderPart(dom) {
             var parts = $(dom).find('.part');
             parts.forEach(function (item) {
@@ -149,19 +147,22 @@ function setBubble(index){
             var $items = $('.item')
             var $index = $(this).index() + 4
             $items.removeAttr('state')
-            obj.upDrag($($items[$index]));
-            obj.downDrag($($items[$index]));
-            obj.nextSlide($($items[$index]));
             obj.prevSlide($($items[$index]));
-            obj.showSlide($($items[$index]));
-            $($items[$index]).prevAll().css('-webkit-transform', 'scale(.8)');
+            $($items[$index]).prevAll().css('-webkit-transform', 'translate3d(0px, -100%, 0px)');
             orderPart($items[$index])
             if ($($items[$index]).prev().length) {
                 $($items[$index]).prev().attr('state', 'prev');
                 $($items[$index]).attr('state', 'next');
             }
-        
-    
+    });
+    $('body').on('tap','.back_menu',function(e){
+        e.preventDefault;
+        var $items = $('.item')
+        $items.removeAttr("style")
+        $($items[2]).attr('state', 'prev');
+        $($items[3]).attr('state', 'next');
+        $($items[3]).css('-webkit-transform', 'translate3d(0,0,0)');
+        $($items[3]).prevAll().css('-webkit-transform', 'translate3d(0px, -100%, 0px)');
     })
 }()
 

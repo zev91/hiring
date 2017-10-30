@@ -4,6 +4,7 @@ html, body {
   height: 100%;
   font-family: arial;
   text-align: center;
+  max-width: 600px;
 }
 
 * {
@@ -17,6 +18,14 @@ ul {
 
 .item .arrow img {
   width: 100%;
+}
+
+.H5FullscreenPage .music {
+  right: 2.6666666667vw;
+  top: 2.6666666667vw;
+  width: 7.2vw;
+  height: 7.2vw;
+  background-size: 7.2vw;
 }
 
 .item1 {
@@ -156,53 +165,106 @@ ul {
 .jobs .jobs_btn .btn.flex_end {
   float: right;
 }
-.jobs .eveirment_ct {
+.jobs .width_img {
+  position: relative;
+  width: 100%;
+}
+.jobs .width_img .triangle {
+  position: absolute;
+}
+.jobs .width_img .triangle-1 {
+  width: 0;
+  top: 2.9333333333vw;
+  left: 2.9333333333vw;
+  border: 8px solid;
+  border-top-width: 12px;
+  border-right-width: 8px;
+  border-bottom-width: 12px;
+  border-left-width: 8px;
+  transform: rotate(57deg);
+  border-color: #c490bf transparent transparent transparent;
+}
+.jobs .width_img .triangle-2 {
+  width: 0;
+  top: 10.9333333333vw;
+  right: 2.9333333333vw;
+  border: 8px solid;
+  border-top-width: 18px;
+  border-right-width: 10px;
+  border-bottom-width: 18px;
+  border-left-width: 10px;
+  transform: rotate(20deg);
+  border-color: #f8b551 transparent transparent transparent;
+}
+.jobs .width_img .triangle-3 {
+  width: 0;
+  top: 106.6666666667vw;
+  right: 6.6666666667vw;
+  border: 8px solid;
+  border-top-width: 12px;
+  border-right-width: 8px;
+  border-bottom-width: 12px;
+  border-left-width: 8px;
+  transform: rotate(100deg);
+  border-color: #acd598 transparent transparent transparent;
+}
+.jobs .width_img .triangle-4 {
+  width: 0;
+  top: 114.6666666667vw;
+  left: 2.6666666667vw;
+  border: 8px solid;
+  border-top-width: 8px;
+  border-right-width: 4px;
+  border-bottom-width: 8px;
+  border-left-width: 4px;
+  transform: rotate(30deg);
+  border-color: #00a0e9 transparent transparent transparent;
+}
+.jobs .width_img .eveirment_ct {
   position: relative;
   width: 80vw;
+  left: 50%;
+  margin-left: -40vw;
   padding-top: 5.3333333333vw;
   text-align: left;
   overflow: hidden;
 }
-.jobs .eveirment_ct .arrow_width {
+.jobs .width_img .eveirment_ct .imagec_ct {
+  width: 480vw;
+  transition: all .4s ease-in;
+}
+.jobs .width_img .eveirment_ct .imagec_ct li {
+  display: block;
+  float: left;
+  width: 80vw;
+}
+.jobs .width_img .eveirment_ct .imagec_ct li img {
+  width: 100%;
+  display: block;
+}
+.jobs .width_img .eveirment_ct .imagec_ct li img:first-child {
+  margin-bottom: 1.0666666667vw;
+}
+.jobs .width_img .arrow_width {
   width: 14px;
   height: 14px;
   position: absolute;
   top: 50%;
   z-index: 9999;
-  border: 2px solid;
+  border: 1px solid;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-.jobs .eveirment_ct .arrow_right {
-  left: 94%;
-  margin-left: -10px;
-  border-color: transparent #fff #fff transparent;
-  animation: toright 1.5s .2s ease 3;
-  -webkit-animation: toright 1.5s .2s 3;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+.jobs .width_img .arrow_right {
+  right: 2%;
+  border-color: transparent #1aa696 #1aa696 transparent;
+  animation: toright 1.5s .2s ease infinite;
+  -webkit-animation: toright 1.5s .2s infinite;
 }
-.jobs .eveirment_ct .arrow_left {
-  right: 94%;
-  margin-left: 10px;
-  border-color: transparent transparent #fff #fff;
-  animation: toleft 1.5s .2s ease 3;
-  -webkit-animation: toleft 1.5s .2s 3;
-  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2);
-}
-.jobs .eveirment_ct .imagec_ct {
-  width: 480vw;
-  transition: all .4s ease-in;
-}
-.jobs .eveirment_ct .imagec_ct li {
-  display: block;
-  float: left;
-  width: 80vw;
-}
-.jobs .eveirment_ct .imagec_ct li img {
-  width: 100%;
-  display: block;
-}
-.jobs .eveirment_ct .imagec_ct li img:first-child {
-  margin-bottom: 1.0666666667vw;
+.jobs .width_img .arrow_left {
+  left: 2%;
+  border-color: transparent transparent #1aa696 #1aa696;
+  animation: toleft 1.5s .2s ease infinite;
+  -webkit-animation: toleft 1.5s .2s infinite;
 }
 .jobs .bubble_ct {
   position: absolute;
@@ -226,28 +288,54 @@ ul {
   background: #009196;
 }
 .jobs .job_info {
-  padding: 1.8666666667vw 4vw;
+  padding: 5.8666666667vw 4vw 2.9333333333vw 4vw;
 }
 .jobs .job_info p {
   align-items: center;
   text-align: left;
   margin: 2.6666666667vw 0;
-  text-indent: 2em;
   font-size: 3.2vw;
   font-weight: 300;
   color: #313131;
-  line-height: 5.0666666667vw;
+  line-height: 5.6vw;
 }
 
-.job_detail .jobs_btn {
-  padding-bottom: 0;
+.job_detail .header_bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  background: url(../images/banner.png) center center;
+  background-size: cover;
+  width: 100vw;
+  height: 36.5333333333vw;
 }
-.job_detail .jobs_btn .btn {
-  margin-bottom: 0;
+.job_detail .header_bg h4 {
+  font-size: 5.8666666667vw;
+  line-height: 8.8vw;
+  font-weight: 400;
+}
+.job_detail .header_bg p {
+  font-size: 2.9333333333vw;
+}
+.job_detail .back_menu {
+  position: absolute;
+  top: 2.6666666667vw;
+  left: 2.6666666667vw;
+  width: 4.8vw;
+  height: 4.8vw;
+  padding: 1.0666666667vw 1.3333333333vw 1.0666666667vw 0.8vw;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.job_detail .back_menu img {
+  width: 100%;
+}
+.job_detail .job_img {
+  margin-bottom: 3.2vw;
 }
 .job_detail .job_img img {
   width: 43.2vw;
-  height: 25.8666666667vw;
 }
 .job_detail .send_ct {
   width: 100%;
@@ -276,6 +364,44 @@ ul {
   transition-duration: 0s;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #fff;
+  background: url(../images/end_bg.png) top center;
+  background-size: cover;
+}
+.end .endword {
+  height: 38.4vw;
+  padding-bottom: 4.8vw;
+  border-bottom: 2px solid #fff;
+}
+.end .endword h5 {
+  font-size: 4.2666666667vw;
+  line-height: 9.6vw;
+}
+.end .endLogo {
+  margin: 5.8666666667vw 0;
+  width: 16vw;
+  height: 16vw;
+}
+.end img {
+  width: 100%;
+}
+.end .bottom_word {
+  height: 20.5333333333vw;
+}
+.end .bottom_word h5 {
+  font-size: 4.2666666667vw;
+}
+.end .bottom_word h2 {
+  font-size: 7.2vw;
+  line-height: 17.0666666667vw;
 }
 
 /*# sourceMappingURL=index.css.map */

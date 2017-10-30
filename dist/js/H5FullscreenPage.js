@@ -1,5 +1,10 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function(){
+    $('html').on('doubleTap ',function(e){
+        e.preventDefault;
+        $('.overlay').hide();
+
+    });
          var opt = {
             'type' : 1,
             'pageShow' : function(){},
@@ -11,11 +16,11 @@
             'useParallax' : true,
             'useArrow' : true,
             'useAnimation' : true,
-            // 'useMusic' : {
-            //     'autoPlay' : true,
-            //     'loopPlay' : true,
-            //     'src' : 'http://mat1.gtimg.com/news/2015/love/FadeAway.mp3'
-            // }
+            'useMusic' : {
+                'autoPlay' : true,
+                'loopPlay' : true,
+                'src' : './music/ForeignExchange.mp3'
+            }
          };
          window.H5FullscreenPage = {
             'init' : function(option){
@@ -368,9 +373,22 @@
                         }, false);  
                     }
             }
+
+            function audioAutoPlay(id){
+                var audio = document.getElementById(id),
+                    play = function(){
+                    audio.play();
+                    document.removeEventListener("touchstart",play, false);
+                };
+                audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    play();
+                }, false);
+                document.addEventListener("touchstart",play, false);
+            }
+            audioAutoPlay('audio');
             $('.music').on('tap',function(){
                 $(this).toggleClass('play');
-                var audio = document.getElementById('audio');
                 if (audio.paused) {
                     audio.play();
                 } else {

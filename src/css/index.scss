@@ -10,6 +10,7 @@
     height: 100%;
     font-family: arial;
     text-align: center;
+    max-width: 600px;
 }
 
 * {
@@ -26,7 +27,14 @@ ul {
         }
     }
   }
+  .H5FullscreenPage .music {
+    right: pxToVw(20px);
+    top: pxToVw(20px);
+    width: pxToVw(54px);
+    height: pxToVw(54px);
+    background-size: pxToVw(54px);
 
+}
 .item1{
     display: flex;
     flex-direction: column;
@@ -167,59 +175,111 @@ ul {
         
 
     }
-    .eveirment_ct{
+    .width_img{
         position: relative;
-        width: pxToVw(600px);
-        // height: pxToVw(800px);
-        padding-top: pxToVw(40px);
-        text-align: left;
-        overflow: hidden;
-       .arrow_width {
-            // display: block;
+        width: 100%;
+        .triangle{
+            position: absolute;
+        }
+        .triangle-1{
+            width: 0;
+            top: pxToVw(22px);
+            left: pxToVw(22px);
+            border: 8px solid ;
+            border-top-width: 12px;
+            border-right-width: 8px;
+            border-bottom-width: 12px;
+            border-left-width: 8px;
+            transform: rotate(57deg); 
+            border-color: #c490bf transparent transparent transparent;
+        }
+        .triangle-2{
+            width: 0;
+            top: pxToVw(82px);
+            right: pxToVw(22px);
+            border: 8px solid ;
+            border-top-width: 18px;
+            border-right-width: 10px;
+            border-bottom-width: 18px;
+            border-left-width: 10px;
+            transform: rotate(20deg); 
+            border-color: #f8b551 transparent transparent transparent;
+        }
+        .triangle-3{
+            width: 0;
+            top: pxToVw(800px);
+            right: pxToVw(50px);
+            border: 8px solid ;
+            border-top-width: 12px;
+            border-right-width: 8px;
+            border-bottom-width: 12px;
+            border-left-width: 8px;
+            transform: rotate(100deg); 
+            border-color: #acd598 transparent transparent transparent;
+        }
+        .triangle-4{
+            width: 0;
+            top: pxToVw(860px);
+            left: pxToVw(20px);
+            border: 8px solid ;
+            border-top-width: 8px;
+            border-right-width: 4px;
+            border-bottom-width: 8px;
+            border-left-width: 4px;
+            transform: rotate(30deg); 
+            border-color: #00a0e9 transparent transparent transparent;
+        }
+        .eveirment_ct{
+            position: relative;
+            width: pxToVw(600px);
+            left: 50%;
+            margin-left: - pxToVw(300px);
+            padding-top: pxToVw(40px);
+            text-align: left;
+            overflow: hidden;
+           
+           .imagec_ct{
+                width: pxToVw(3600px);
+                transition: all .4s ease-in;
+                li{
+                    display: block;
+                    float: left;
+                    width: pxToVw(600px);
+                    img{
+                        width: 100%;
+                        display: block;
+                        
+                        &:first-child{
+                            margin-bottom: pxToVw(8px);
+                        }
+                    }
+                }
+           }
+            
+        }
+        .arrow_width {
             width: 14px;
             height: 14px;
             position: absolute;
             top: 50%;
             z-index: 9999;
-            border: 2px solid;
+            border: 1px solid;
             -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
         }
         .arrow_right {
-            left: 94%;
-            margin-left: -10px;
-            border-color: transparent #fff #fff transparent; 
-            animation: toright 1.5s .2s ease 3;
-            -webkit-animation: toright 1.5s .2s 3;
-            box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+            right: 2%;
+            border-color: transparent #1aa696 #1aa696 transparent; 
+            animation: toright 1.5s .2s ease infinite;
+            -webkit-animation: toright 1.5s .2s infinite;
         }
         .arrow_left {
-            right: 94%;
-            margin-left: 10px;
-            border-color: transparent transparent #fff #fff ; 
-            animation: toleft 1.5s .2s ease 3;
-            -webkit-animation: toleft 1.5s .2s 3;
-            box-shadow: -2px 2px 2px rgba(0,0,0,0.2);
+            left: 2%;
+            border-color: transparent transparent #1aa696 #1aa696 ; 
+            animation: toleft 1.5s .2s ease infinite;
+            -webkit-animation: toleft 1.5s .2s infinite;
         }
-       .imagec_ct{
-            width: pxToVw(3600px);
-            transition: all .4s ease-in;
-            // height: pxToVw(832px);
-            li{
-                display: block;
-                float: left;
-                width: pxToVw(600px);
-                img{
-                    width: 100%;
-                    display: block;
-                    
-                    &:first-child{
-                        margin-bottom: pxToVw(8px);
-                    }
-                }
-            }
-       }
-        
     }
+    
     .bubble_ct{
         position: absolute;
         top: pxToVw(284px);
@@ -227,9 +287,7 @@ ul {
         padding: pxToVw(4px) pxToVw(20px);
         border-radius: pxToVw(20px);
         background: rgba(255, 255, 255, 0.4);
-        // border: 1px solid #009196;
         margin-left: - pxToVw(50px);
-        // box-shadow: 0px 0px 2px rgba(0, 145, 150, 0.3);
         .bubble{
             width: pxToVw(12px);
             height: pxToVw(12px);
@@ -244,30 +302,57 @@ ul {
         }
     }
     .job_info{
-        padding: pxToVw(14px) pxToVw(30px);
+        padding: pxToVw(44px) pxToVw(30px) pxToVw(22px) pxToVw(30px) ;
         p{
             align-items: center;
             text-align: left;  
             margin: pxToVw(20px) 0;
-            text-indent:2em ;
+            // text-indent:2em ;
             font-size: pxToVw(24px);
             font-weight: 300;
             color: #313131;
-            line-height: pxToVw(38px);
+            line-height: pxToVw(42px);
         }
+         
     }
 }
 .job_detail{
-    .jobs_btn{
-        padding-bottom: 0;
-        .btn{
-            margin-bottom: 0;
+    .header_bg{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+        background: url(../images/banner.png) center center;
+        background-size: cover;
+        width: 100vw;
+        height: pxToVw(274px);
+        h4{
+            font-size: pxToVw(44px);
+            line-height: pxToVw(66px);
+            font-weight: 400;
+         }
+         p{
+            font-size:pxToVw(22px);
+         }
+        }
+    .back_menu{
+        position: absolute;
+        top: pxToVw(20px);
+        left: pxToVw(20px);
+        width: pxToVw(36px);
+        height: pxToVw(36px);
+        padding: pxToVw(8px) pxToVw(10px) pxToVw(8px) pxToVw(6px);
+        border: 1px solid #fff;
+        border-radius: 50%;
+        img{
+            width: 100%;
         }
     }
+  
     .job_img{
+        margin-bottom: pxToVw(24px);
         img{
             width:pxToVw(324px);
-            height:pxToVw(194px);
         }
     }
     .send_ct{
@@ -300,4 +385,43 @@ ul {
         }
     }
     
+}
+.end{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #fff;
+    background: url(../images/end_bg.png) top center;
+    background-size: cover;
+    .endword{
+        height: pxToVw(288px);
+      padding-bottom: pxToVw(36px);
+      border-bottom: 2px solid #fff;
+      h5{
+          
+          font-size: pxToVw(32px);
+          line-height: pxToVw(72px);
+      }
+    }
+    .endLogo{
+        margin: pxToVw(44px) 0;
+        width: pxToVw(120px);
+        height: pxToVw(120px);
+    }
+    img{
+        width: 100%;
+    }
+    .bottom_word{
+     height: pxToVw(154px);
+        h5{
+           
+            font-size: pxToVw(32px);
+        }
+        h2{
+            font-size: pxToVw(54px);
+            line-height: pxToVw(128px);
+        }
+    }
 }

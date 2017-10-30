@@ -1,4 +1,9 @@
 (function(){
+    $('html').on('doubleTap ',function(e){
+        e.preventDefault;
+        $('.overlay').hide();
+
+    });
          var opt = {
             'type' : 1,
             'pageShow' : function(){},
@@ -10,11 +15,11 @@
             'useParallax' : true,
             'useArrow' : true,
             'useAnimation' : true,
-            // 'useMusic' : {
-            //     'autoPlay' : true,
-            //     'loopPlay' : true,
-            //     'src' : 'http://mat1.gtimg.com/news/2015/love/FadeAway.mp3'
-            // }
+            'useMusic' : {
+                'autoPlay' : true,
+                'loopPlay' : true,
+                'src' : './music/ForeignExchange.mp3'
+            }
          };
          window.H5FullscreenPage = {
             'init' : function(option){
@@ -367,9 +372,22 @@
                         }, false);  
                     }
             }
+
+            function audioAutoPlay(id){
+                var audio = document.getElementById(id),
+                    play = function(){
+                    audio.play();
+                    document.removeEventListener("touchstart",play, false);
+                };
+                audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    play();
+                }, false);
+                document.addEventListener("touchstart",play, false);
+            }
+            audioAutoPlay('audio');
             $('.music').on('tap',function(){
                 $(this).toggleClass('play');
-                var audio = document.getElementById('audio');
                 if (audio.paused) {
                     audio.play();
                 } else {
